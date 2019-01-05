@@ -6,7 +6,8 @@ import sklearn
 from sklearn.externals import joblib
 
 # モデルの読み込み
-loaded_model = joblib.load('demo_app/demo_model.pkl')
+# loaded_model = joblib.load('demo_app/demo_model.pkl')
+loaded_model = joblib.load('/home/USER名/USER名.pythonanywhere.com/demo_app/demo_model.pkl') # PythonAnywhereの環境にあわせたパスに変更
 
 def index(request):
     return render(request, 'demo_app/index.html', {})
@@ -63,4 +64,3 @@ def history(request):
     else:
         customers = Customers.objects.all()
         return render(request, 'demo_app/history.html', {'customers':customers})
-        
